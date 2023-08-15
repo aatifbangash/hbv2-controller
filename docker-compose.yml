@@ -1,0 +1,59 @@
+version: "3.7"
+services:
+    hbv2controller:
+        build:
+            context: ./
+            dockerfile: Dockerfile.dev
+        image: hbv2controller
+        container_name: hbv2controller
+        restart: unless-stopped
+        ports:
+            - 8080:80
+        volumes:
+            -   .:/var/www/html
+        networks:
+            - hbv2
+
+    hbv2user:
+        build:
+            context: ./hbv2-user/
+            dockerfile: Dockerfile.dev
+        image: hbv2user
+        container_name: hbv2user
+        restart: unless-stopped
+        ports:
+            - 8081:80
+        volumes:
+            - ./hbv2-user/:/var/www/html
+        networks:
+            - hbv2
+    hbv2redshift:
+        build:
+            context: ./hbv2-redshift/
+            dockerfile: Dockerfile.dev
+        image: hbv2redshift
+        container_name: hbv2redshift
+        restart: unless-stopped
+        ports:
+            - 8082:80
+        volumes:
+            - ./hbv2-redshift/:/var/www/html
+        networks:
+            - hbv2
+    hbv2redis:
+        build:
+            context: ./hbv2-redis/
+            dockerfile: Dockerfile.dev
+        image: hbv2redis
+        container_name: hbv2redis
+        restart: unless-stopped
+        ports:
+            - 8083:80
+        volumes:
+            - ./hbv2-redis/:/var/www/html
+        networks:
+            - hbv2
+
+networks:
+    hbv2:
+        driver: bridge

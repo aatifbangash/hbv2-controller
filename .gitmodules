@@ -1,0 +1,9 @@
+[submodule "hbv2-user"]
+	path = hbv2-user
+	url = https://github.com/schellbrothers/hbv2-user.git
+[submodule "hbv2-redshift"]
+	path = hbv2-redshift
+	url = https://github.com/schellbrothers/hbv2-redshift.git
+[submodule "hbv2-redis"]
+	path = hbv2-redis
+	url = https://github.com/schellbrothers/hbv2-redis.git

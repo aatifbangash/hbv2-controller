@@ -1,0 +1,10 @@
+node_modules/
+vendor/
+hbv2-user/
+hbv2-redis/
+hbv2-redshift/
+test/
+.git/
+.idea/
+copilot/
+.env
