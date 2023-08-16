@@ -1,3 +1,6 @@
 [submodule "hbv2-user"]
 	path = hbv2-user
 	url = git@github.com:aatifbangash/hbv2-user.git
+[submodule "hbv2-redis"]
+	path = hbv2-redis
+	url = git@github.com:aatifbangash/hbv2-redis.git
